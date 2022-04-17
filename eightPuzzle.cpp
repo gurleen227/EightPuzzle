@@ -123,10 +123,14 @@ void move(char m) {
 int temp;
 int sq = sqrt(size);
 switch (m) {										
-	case 'u': case 'U': temp = empty - sq;	break;
-	case 'd': case 'D': temp = empty + sq;	break;
-	case 'l': case 'L': temp = empty - 1;	break;
-	case 'r': case 'R': temp = empty + 1;	break;
+	case 'u': case 'U': temp = empty - sq;	
+	break;
+	case 'd': case 'D': temp = empty + sq;	
+	break;
+	case 'l': case 'L': temp = empty - 1;	
+	break;
+	case 'r': case 'R': temp = empty + 1;	
+	break;
 	default:  temp = -1;
 }
 swap(state->at(empty), state->at(temp));		
@@ -146,10 +150,14 @@ Node* moveAct(char m) {
 		int temp;
 		int sq = sqrt(size);
 		switch (m) {										
-		case 'u': case 'U': temp = empty - sq;	break;
-		case 'd': case 'D': temp = empty + sq;	break;
-		case 'l': case 'L': temp = empty - 1;	break;
-		case 'r': case 'R': temp = empty + 1;	break;
+		case 'u': case 'U': temp = empty - sq;	
+		break;
+		case 'd': case 'D': temp = empty + sq;	
+		break;
+		case 'l': case 'L': temp = empty - 1;	
+		break;
+		case 'r': case 'R': temp = empty + 1;	
+		break;
 		default:  temp = -1;
 		}
 		string newState = swapString(empty, temp);		
@@ -218,10 +226,10 @@ private:
 	reached = new string[0];
 	numExp = 0;
 	numNode = 0;
-	end = new Node();
-	next = new Node();
 	result = new Node();
 	fail = new Node();
+	end = new Node();
+	next = new Node();
     }							
 	
     
@@ -229,12 +237,12 @@ private:
     initial = new Node(state);
 	final = fin;
 	reached = new string[1000000];
-	numExp = 0;
-	numNode = 0;
-	end = new Node("0");
 	next = new Node();
 	result = new Node("0");
 	fail = new Node();
+	numExp = 0;
+	numNode = 0;
+	end = new Node("0");
     }
 
 	int getNumExp() { 
