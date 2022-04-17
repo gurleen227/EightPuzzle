@@ -46,8 +46,8 @@ public:
 	moves = new string(m);	
     }
 
-	string* state;		// tile puzzle stored as string
-	string* moves;		// sequence of moves to get to current state from initial state
+	string* state;		// tile puzzle 
+	string* moves;		// moves
 
     //change current state into new string
 void setState(string s) {
@@ -197,19 +197,21 @@ void sequence(std::string s) {
 
 class SearchAlgo {
 private:
-	Node* initial;					// initial puzzle state problem
-	queue<Node*> frontier;		// frontier for BFS stored as queue
-	string* reached;			// reached stored array of states
-	string final;				// final puzzle state stored as string
-	unsigned int numExp;			// number of expanded Nodes
-	unsigned int numNode;			// number of Nodes stored in reached
-
-	Node* end;					// cutOff Node used for DFS
-	Node* next;						// next Node used for sorting algorithms
-	Node* result;					// result Node used for sorting algorithms
-	Node* fail;						// fail Node used for sorting algorithms
+	Node* initial;			
+	// frontier		
+	queue<Node*> frontier;
+	string* reached;			
+	string final;		
+	//expanded nodes		
+	unsigned int numExp;			
+	unsigned int numNode;			
+	Node* end;					
+	Node* next;						
+	Node* result;					
+	Node* fail;						
 
     public:
+	//constructor
 	SearchAlgo(){
     initial = new Node();
 	final = "";
@@ -220,7 +222,7 @@ private:
 	next = new Node();
 	result = new Node();
 	fail = new Node();
-    }							// default constructor
+    }							
 	
     
     SearchAlgo(string state, string fin){
@@ -240,7 +242,7 @@ private:
     }	
 	
     
-    // expand parent children nodes
+    //expand parent children nodes
     Node* expand(Node* n, int i){
         char last = ' ';
 	if (!(*n).moves->empty())
