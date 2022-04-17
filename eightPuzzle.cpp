@@ -361,21 +361,56 @@ int main()
     string goal; 
     cout << "Enter initial state: ";
     cin >> input;
-    // cout << "Enter goal state: ";
-    // cin >> goal;
-    goal = "123456789ABCDEF0";
+    cout << "Enter goal state: ";
+    cin >> goal;
     cout << endl;
+
+	int choice;
+	cout << "Plase select the corresponding number for the algorithms you would like to run the search with" << endl;
+	cout << "1. Breadth First Seach" << endl;
+	cout << "2. Depth First Seach" << endl;
+	cout << "3. Iterative Deepening Depth First Seach" << endl;
+	cin >> choice;
 
     SearchAlgo* stringSearch = new SearchAlgo(input, goal);
 	Node* final = new Node();
-    final = stringSearch->IDS();
-
     
-	int extendedN = stringSearch->getNumExp();
-	string movesF = (*final->moves);
+	if(choice == 1){
+		final = stringSearch->BFS();
+		int extendedN = stringSearch->getNumExp();
+		string movesF = (*final->moves);
 
-	cout << "Expanded node: " << extendedN << endl;
-	cout << "Sequence of moves: " << movesF << endl;
+		cout << "Expanded node: " << extendedN << endl;
+		cout << "Sequence of moves: " << movesF << endl;
+	}
+
+	else if(choice == 2){
+		final = stringSearch->DFS(30);
+		int extendedN = stringSearch->getNumExp();
+		string movesF = (*final->moves);
+
+		cout << "Expanded node: " << extendedN << endl;
+		cout << "Sequence of moves: " << movesF << endl;
+	}
+
+	else if (choice == 3){
+		final = stringSearch->IDS();
+		int extendedN = stringSearch->getNumExp();
+		string movesF = (*final->moves);
+
+		cout << "Expanded node: " << extendedN << endl;
+		cout << "Sequence of moves: " << movesF << endl;
+	}
+	
+	else{
+		cout << "choice invalid" << endl;
+	}
+	// final = stringSearch->BFS();
+	// int extendedN = stringSearch->getNumExp();
+	// string movesF = (*final->moves);
+
+	// cout << "Expanded node: " << extendedN << endl;
+	// cout << "Sequence of moves: " << movesF << endl;
 		
 
     return 0;
