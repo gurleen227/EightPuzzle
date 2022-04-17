@@ -405,13 +405,6 @@ int main()
 	else{
 		cout << "choice invalid" << endl;
 	}
-	// final = stringSearch->BFS();
-	// int extendedN = stringSearch->getNumExp();
-	// string movesF = (*final->moves);
-
-	// cout << "Expanded node: " << extendedN << endl;
-	// cout << "Sequence of moves: " << movesF << endl;
-		
 
     return 0;
 }
