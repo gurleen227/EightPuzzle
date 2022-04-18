@@ -9,9 +9,9 @@
 using namespace std;
 
 class Node {
-private:
+private:			
+	int empty;
 	int size;			
-	int empty;			
 
 public:
     // constructor
@@ -22,17 +22,6 @@ public:
 	moves = new string("");
     }				
 	
-    Node(string s){
-    state = new string(s);
-	size = state->size();
-	empty = -1;
-	for (int i = 0; i < size; i++) {	
-		if (state->at(i) == '0')
-			empty = i;
-	}
-	checkEmpty();
-	moves = new string("");	
-    }
 
 	Node(string s, string m){
         state = new string(s);
@@ -46,10 +35,22 @@ public:
 	moves = new string(m);	
     }
 
+	Node(string s){
+    state = new string(s);
+	size = state->size();
+	empty = -1;
+	for (int i = 0; i < size; i++) {	
+		if (state->at(i) == '0')
+			empty = i;
+	}
+	checkEmpty();
+	moves = new string("");	
+    }
+
 	string* state;		// tile puzzle 
 	string* moves;		// moves
 
-    //change current state into new string
+//current state into new string
 void setState(string s) {
 	if (s.size() != size) {
 		system("cls");
@@ -69,7 +70,7 @@ void setState(string s) {
 }
 
 
-	// check if blank is within puzzle
+//check if blank is within puzzle
     void checkEmpty() {
 	if (empty == -1) {	
 		string input;
