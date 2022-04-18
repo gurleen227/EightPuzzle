@@ -119,7 +119,7 @@ string swapString(int x, int y) {
 	return st;
 }
 	
-    //perform a move on puzzle tile
+//perform a move
 void move(char m) {
 int temp;
 int sq = sqrt(size);
@@ -138,9 +138,8 @@ swap(state->at(empty), state->at(temp));
 moves->push_back(m);								
 empty = temp;
 }
-
 		
-// move on puzzle tile and return as new Node
+// move function
 Node* moveAct(char m) {
 	Node* ret;
 	if (!valid(m)) {		// Invalid move
