@@ -324,7 +324,7 @@ private:
 			}
 		}
 	}
-	if (cut)			// if end
+	if (cut)			
 		return end;
 	else {
 		return fail;
